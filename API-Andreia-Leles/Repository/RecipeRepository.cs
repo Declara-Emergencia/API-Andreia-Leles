@@ -1,4 +1,4 @@
-﻿using API_Andreia_Leles.Entities;
+﻿   using API_Andreia_Leles.Entities;
 using API_Andreia_Leles.Repository.Interfaces;
 using LiteDB;
 using System;
@@ -9,6 +9,7 @@ using System.IO;
 
 namespace API_Andreia_Leles.Repository
 {
+    //Repository 
     public class RecipeRepository : IRecipeRepository
     {
         private static SQLiteConnection sqliteConnection;
