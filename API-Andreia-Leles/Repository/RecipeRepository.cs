@@ -9,7 +9,7 @@ using System.IO;
 
 namespace API_Andreia_Leles.Repository
 {
-    //Recipe Repository Class
+    //Recipe Repository
     public class RecipeRepository : IRecipeRepository
     {
         private static SQLiteConnection sqliteConnection;
