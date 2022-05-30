@@ -8,6 +8,7 @@ using API_Andreia_Leles.Repository;
 using API_Andreia_Leles.Repository.Interfaces;
 using API_Andreia_Leles.Services;
 using API_Andreia_Leles.Services.Interfaces;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace API_Andreia_Leles
 {
@@ -31,6 +32,22 @@ namespace API_Andreia_Leles
             });
             services.AddScoped<IRecipeService, RecipeService>();
             services.AddSingleton<IRecipeRepository, RecipeRepository>();
+
+            services.AddCors(options => {
+                options.AddPolicy(name: "MyPolicy",
+                    policy => {
+                        policy//.WithOrigins("http://localhost:8080").WithMethods("POST","GET","OPTIONS");
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                            //.SetIsOriginAllowed(CorsPolicy.IsOriginAllowed)
+                            /*.SetIsOriginAllowedToAllowWildcardSubdomains().WithOrigins("http://*")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();*/
+                    }
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +65,8 @@ namespace API_Andreia_Leles
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("MyPolicy");
 
             app.UseEndpoints(endpoints =>
             {

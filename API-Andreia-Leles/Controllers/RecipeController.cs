@@ -1,5 +1,6 @@
 ﻿using API_Andreia_Leles.Entities;
 using API_Andreia_Leles.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
