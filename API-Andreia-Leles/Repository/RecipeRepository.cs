@@ -9,10 +9,11 @@ using System.IO;
 
 namespace API_Andreia_Leles.Repository
 {
+    //Recipe Repository
     public class RecipeRepository : IRecipeRepository
     {
         private static SQLiteConnection sqliteConnection;
-        private string ConnectionString { get; set; } = @"C:\Users\Public\Documents\andrelles.sqlite"; 
+        private string ConnectionString { get; set; } = @"andrelles.sqlite"; 
 
         public RecipeRepository()
         {
