@@ -42,7 +42,7 @@ namespace API_Andreia_Leles.Controllers
 
             if (result)
             {
-                return Ok();
+                return Ok(recipe);
             }
 
             return BadRequest();
